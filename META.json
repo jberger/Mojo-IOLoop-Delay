@@ -33,21 +33,21 @@
    "provides" : {
       "Mojo::IOLoop::Delay" : {
          "file" : "lib/Mojo/IOLoop/Delay.pm",
-         "version" : "8.74"
+         "version" : "8.75"
       }
    },
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
-         "web" : "http://github.com/mojolicious/Mojo-IOLoop-Delay/issues"
+         "web" : "http://github.com/jberger/Mojo-IOLoop-Delay/issues"
       },
       "license" : [
          "http://dev.perl.org/licenses/"
       ],
       "repository" : {
-         "url" : "http://github.com/mojolicious/Mojo-IOLoop-Delay"
+         "url" : "http://github.com/jberger/Mojo-IOLoop-Delay"
       }
    },
-   "version" : "8.74",
+   "version" : "8.75",
    "x_deprecated" : 1
 }

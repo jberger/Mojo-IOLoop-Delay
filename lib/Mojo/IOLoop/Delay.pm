@@ -1,7 +1,7 @@
 package Mojo::IOLoop::Delay;
 use Mojo::Base 'Mojo::Promise';
 
-our $VERSION = '8.74';
+our $VERSION = '8.75';
 $VERSION = eval $VERSION;
 
 sub begin {
