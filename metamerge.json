@@ -6,10 +6,10 @@
    },
    "resources" : {
       "repository" : {
-         "url" : "http://github.com/mojolicious/Mojo-IOLoop-Delay"
+         "url" : "http://github.com/jberger/Mojo-IOLoop-Delay"
       },
       "bugtracker" : {
-         "web" : "http://github.com/mojolicious/Mojo-IOLoop-Delay/issues"
+         "web" : "http://github.com/jberger/Mojo-IOLoop-Delay/issues"
       },
       "license" : [ "http://dev.perl.org/licenses/" ]
    },

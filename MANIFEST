@@ -4,7 +4,6 @@ LICENSE
 MANIFEST
 META.json
 META.yml
-README.pod
 cpanfile
 lib/Mojo/IOLoop/Delay.pm
 metamerge.json
