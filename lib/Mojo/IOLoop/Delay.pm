@@ -1,8 +1,20 @@
 package Mojo::IOLoop::Delay;
 use Mojo::Base 'Mojo::Promise';
 
-our $VERSION = '8.75';
+our $VERSION = '8.76';
 $VERSION = eval $VERSION;
+
+require Mojo::IOLoop;
+unless (Mojo::IOLoop->can('delay')) {
+  require Mojo::Util;
+
+  Mojo::Util::monkey_patch 'Mojo::IOLoop', delay => sub {
+    my $self = shift;
+    my $loop = ref $self ? $self : $self->singleton;
+    my $delay = Mojo::IOLoop::Delay->new->ioloop($loop);
+    return @_ ? $delay->steps(@_) : $delay;
+  };
+}
 
 sub begin {
   my ($self, $offset, $len) = @_;
@@ -117,6 +129,7 @@ example below, the call to L</"begin"> creates a code reference that we can pass
 callback, and that leads to the next closure in the series when executed.
 
   use Mojo::IOLoop;
+  use Mojo::IOLoop::Delay; # adds Mojo::IOLoop->delay
 
   # Instead of nested closures we now have a simple chain of steps
   my $delay = Mojo::IOLoop->delay(
@@ -144,6 +157,12 @@ It is kept here for backwards compatibility purposes but there is no intention t
 
 Though there is no intention of removing it from CPAN in the future it should be treated as deprecated and the metadata will mark it as such.
 It will receive no no-security-related changes going forward.
+
+=head1 MOJO::IOLOOP CLASS METHOD CONSTRUCTOR
+
+As of Mojolicious 9.0, the package L<Mojo::IOLoop> no longer provides a class constructor for delays.
+If you want to use L<< Mojo::IOLoop->delay >> you must first load this class explicitly which will add it back.
+You can also use C<-MMojo::IOLoop::Delay> at the command line to do so.
 
 =head1 ATTRIBUTES
 

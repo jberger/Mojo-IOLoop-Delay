@@ -33,7 +33,7 @@
    "provides" : {
       "Mojo::IOLoop::Delay" : {
          "file" : "lib/Mojo/IOLoop/Delay.pm",
-         "version" : "8.75"
+         "version" : "8.76"
       }
    },
    "release_status" : "stable",
@@ -48,6 +48,6 @@
          "url" : "http://github.com/jberger/Mojo-IOLoop-Delay"
       }
    },
-   "version" : "8.75",
+   "version" : "8.76",
    "x_deprecated" : 1
 }
